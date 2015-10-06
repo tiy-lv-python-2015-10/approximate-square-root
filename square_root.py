@@ -1,10 +1,11 @@
 guess = 1
 root = int(input("Enter a positive number: "))
-square_root = True
-while square_root:
-    best_guess = root - guess**2
-    if best_guess <= 0.01:
-        square_root = False
-        print(best_guess)
+keep_going = True
+
+while keep_going:
+    differance = abs(root - guess**2)
+    if differance < 0.01:
+        keep_going = False
+        print(round(guess, 2))
     else:
         guess = (guess + root/guess)/2
